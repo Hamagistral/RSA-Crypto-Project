@@ -43,23 +43,23 @@ with col1:
     if encrypt_btn and message:
         public_key, private_key = generate_keys()
 
-        st.session_state['public_key'] = f'🔓 **Public key** : {public_key}'
-        st.session_state['private_key'] = f'🗝️ **Private key** : {private_key}'
+        st.session_state['public_key'] = f'🔓 **Public key:** {public_key}'
+        st.session_state['private_key'] = f'🗝️ **Private key:** {private_key}'
 
         st.session_state['encrypted_message'] = f"🗨️ **Encrypted Message:** {encrypt(message, public_key)}"
 
     # Retrieve the encrypted message from st.session_state
-    public_key = st.session_state.get('public_key', None)
-    private_key = st.session_state.get('private_key', None)
-    encrypted_message = st.session_state.get('encrypted_message', None)
+    public_key_info = st.session_state.get('public_key', '🔓 **Public key:**')
+    private_key_info = st.session_state.get('private_key', '🗝️ **Private key:**')
+    encrypted_message = st.session_state.get('encrypted_message', '🗨️ **Encrypted Message:**')
 
     col3, col4 = st.columns(2)
     with col3:
-        st.info(st.session_state['public_key'])
+        st.info(public_key_info)
     with col4:
-        st.info(st.session_state['private_key']) 
+        st.info(private_key_info) 
     
-    st.error(st.session_state['encrypted_message'])
+    st.error(encrypted_message)
     
 
 with col2:
