@@ -9,15 +9,6 @@ with st.sidebar:
     st.markdown('# 💬 Encrypt and Decrypt your messages using RSA 🔐')
     st.markdown('''
     ---
-    ### 🔮 À Propos
-
-    L'objectif de ce devoir est de réaliser un programme (interactif) implémentant l'algorithme RSA permettant de:
-
-    - Générer les clés RSA (Cryptosystème)
-    - Crypter un message d'entrée (Plaintext)
-    - Décrypter un message chiffré (Ciphertext)
-    ---
-
     ### 💻 Comment ça marche ?
 
     1. Enter the text you want to encrypt and click "🔓 Encrypt Message"
@@ -26,6 +17,15 @@ with st.sidebar:
     4. Enter the ciphertext and private key in the "🗝️ Decrypt a ciphertext"
     5. Decrypt your message
 
+    ---
+
+    ### 🔮 À Propos
+
+    L'objectif de ce devoir est de réaliser un programme (interactif) implémentant l'algorithme RSA permettant de:
+
+    - Générer les clés RSA (Cryptosystème)
+    - Crypter un message d'entrée (Plaintext)
+    - Décrypter un message chiffré (Ciphertext)
     ---
     ''')
 
@@ -80,3 +80,11 @@ with col2:
     except:
         st.warning("⏪ Please enter a valid **private key** in a (d, n) format.")
 
+hide_streamlit_style = """
+<style>
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+</style>
+"""
+
+st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
