@@ -29,8 +29,8 @@ with st.sidebar:
     ---
     ''')
 
-    st.markdown('😺 See Project Repository on [GitHub](https://github.com/Hamagistral/decathlon-chatbot)')
-    st.markdown('👨‍💻 Made by [EL BELGHITI Hamza](https://www.linkedin.com/in/hamza-elbelghiti/) & EL FARKH Salaheddine')
+    st.markdown('😺 See Project Repository on [GitHub](https://github.com/Hamagistral/RSA-Crypto-Project)')
+    st.markdown('👨‍💻 Made by [**EL BELGHITI Hamza**](https://www.linkedin.com/in/hamza-elbelghiti/) & **EL FARKH Salaheddine**')
 
 col1, col2 = st.columns(2)
 
