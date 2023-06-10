@@ -79,3 +79,11 @@ with col2:
     except:
         st.warning("⏪ Please enter a valid **private key** in a (d, n) format.")
 
+hide_streamlit_style = """
+<style>
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+</style>
+"""
+
+st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
