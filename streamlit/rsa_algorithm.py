@@ -64,21 +64,25 @@ def generate_keys():
 
     return ((public_key, n), (private_key, n))
 
-def encrypt(msg_plaintext, public_key):
+def encrypt_plaintext(msg_plaintext, public_key):
     """
     Encrypt a given text using the public key
     """
     e, n = public_key
+
+    # pow(x, y, z): x is the base, y is the exponent and z the modulus
     msg_ciphertext = [pow(ord(c), e, n) for c in msg_plaintext]
     
     return msg_ciphertext
 
 
-def decrypt(msg_ciphertext, private_key):
+def decrypt_ciphertext(msg_ciphertext, private_key):
     """
     Decrypt a given ciphertext using the private key
     """
     d, n = private_key
+
+    # pow(x, y, z): x is the base, y is the exponent and z the modulus
     msg_plaintext = [chr(pow(c, d, n)) for c in msg_ciphertext]
 
     return (''.join(msg_plaintext))
@@ -94,7 +98,7 @@ def decrypt(msg_ciphertext, private_key):
 # msg = input("Write your message: ")
 # print([ord(c) for c in msg])
 
-# encrypted_msg = encrypt(msg, public)
+# encrypted_msg = encrypt_plaintext(msg, public)
 # print("Encrypted Message: " + ''.join(map(lambda x: str(x), encrypted_msg)))
 
-# print(f"Decrypted Message : {decrypt(encrypted_msg, private)}")
+# print(f"Decrypted Message : {decrypt_ciphertext(encrypted_msg, private)}")

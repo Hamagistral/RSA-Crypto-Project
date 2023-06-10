@@ -1,5 +1,5 @@
 import streamlit as st
-from rsa_algorithm import encrypt, decrypt, generate_keys
+from rsa_algorithm import encrypt_plaintext, decrypt_ciphertext, generate_keys
 import ast
 
 st.set_page_config(page_title="RSA Cryptosystem", layout="wide", page_icon='🔐')
@@ -45,7 +45,7 @@ with col1:
         st.session_state['public_key'] = f'🔓 **Public key:** {public_key}'
         st.session_state['private_key'] = f'🗝️ **Private key:** {private_key}'
 
-        st.session_state['encrypted_message'] = f"🗨️ **Encrypted Message:** {encrypt(message, public_key)}"
+        st.session_state['encrypted_message'] = f"🗨️ **Encrypted Message:** {encrypt_plaintext(message, public_key)}"
 
     # Retrieve the encrypted message from st.session_state
     public_key_info = st.session_state.get('public_key', '🔓 **Public key:**')
@@ -75,7 +75,7 @@ with col2:
             if decrypt_btn and decrypt_message:
                 cipher_message = ast.literal_eval(decrypt_message)
 
-                st.success(f"💬 **Decrypted Message:** {decrypt(cipher_message, privateKey)}")
+                st.success(f"💬 **Decrypted Message:** {decrypt_ciphertext(cipher_message, privateKey)}")
     except:
         st.warning("⏪ Please enter a valid **private key** in a (d, n) format.")
 
