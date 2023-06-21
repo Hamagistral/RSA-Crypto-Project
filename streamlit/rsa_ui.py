@@ -9,7 +9,7 @@ with st.sidebar:
     st.markdown('# 💬 Encrypt and Decrypt your messages using RSA 🔐')
     st.markdown('''
     ---
-    ### 💻 Comment ça marche ?
+    ### 💻 How does it work ?
 
     1. Enter the text you want to encrypt and click "🔓 Encrypt Message"
     2. A pair of public and private key will be generated
@@ -19,13 +19,13 @@ with st.sidebar:
 
     ---
 
-    ### 🔮 À Propos
+    ### 🔮 About
 
-    L'objectif de ce devoir est de réaliser un programme (interactif) implémentant l'algorithme RSA permettant de:
+    **This is a project part of the CyberSec class MSID 2022/2023**. The objective of this assignment is to create an (interactive) program implementing the RSA algorithm allowing to:
 
-    - Générer les clés RSA (Cryptosystème)
-    - Crypter un message d'entrée (Plaintext)
-    - Décrypter un message chiffré (Ciphertext)
+    - Generate RSA keys (Cryptosystem)
+    - Encrypt an input message (Plaintext)
+    - Decrypt an encrypted message (Ciphertext)
     ---
     ''')
 
